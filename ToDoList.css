@@ -1,3 +1,50 @@
 body {
   margin: 0 auto;
 }
+
+header {
+  background-color: rgba(101, 233, 237, 0.5);
+}
+
+.logosAndSearch {
+  display: flex;
+  padding: 5px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.fa-solid {
+  line-height: 20px;
+}
+
+.logoBars {
+  margin-right: 15px;
+  color: black;
+}
+
+.logoHome {
+  margin-right: 20px;
+  color: black;
+}
+
+.searchBar {
+  display: flex;
+  width: 150px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.5;
+}
+
+.searchBar > a {
+  color: black;
+  font-size: 12px;
+  margin: 0 10px 0 5px;
+}
+
+.searchBar > .txt {
+  display: inline-block;
+  color: gray;
+  font-size: 10px;
+  line-height: 20px;
+}
