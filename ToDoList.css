@@ -1,10 +1,13 @@
 body {
   margin: 0 auto;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 header {
   background-color: rgba(101, 233, 237, 0.5);
 }
+
+/* Header 부분 */
 
 .logosAndSearch {
   display: flex;
@@ -47,4 +50,51 @@ header {
   color: gray;
   font-size: 10px;
   line-height: 20px;
+}
+
+/* mainSec 부분 */
+
+.mainSec {
+  display: flex;
+  height: 100vh;
+}
+
+li {
+  list-style: none;
+  width: 100px;
+}
+
+.navbar {
+  background-color: rgba(47, 53, 54, 0.1);
+  width: 130px;
+  /* font-size: 12px; */
+}
+
+.navItems {
+  width: 100px;
+  padding-left: 20px;
+}
+
+.navItem {
+  display: flex;
+  margin: 10px 0;
+}
+
+.navItem > span {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+input[type="checkbox"] {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  appearance: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: black;
+  border: none;
 }
