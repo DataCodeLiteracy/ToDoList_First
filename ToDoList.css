@@ -208,3 +208,13 @@ input[type="checkbox"]:checked {
 input[type="text"] {
   height: 25px;
 }
+
+/* span -> input */
+
+.inputSearch,
+.inputSearch:focus {
+  width: 120px;
+  appearance: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
