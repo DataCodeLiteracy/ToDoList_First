@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="ToDoList.js" defer></script>
     <script
       src="https://kit.fontawesome.com/b8ead2406e.js"
       crossorigin="anonymous"
@@ -20,7 +21,7 @@
   <body>
     <header>
       <div class="logosAndSearch">
-        <a href="" class="logoBars"><i class="fa-solid fa-bars"></i></a>
+        <button class="logoBars"><i class="fa-solid fa-bars"></i></button>
         <a href="" class="logoHome"><i class="fa-solid fa-house"></i></a>
         <div class="searchBar">
           <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -60,39 +61,7 @@
             <ul class="cntItems">
               <li class="cntItem">
                 <div><input type="checkbox" /></div>
-                <input type="text" class="txt"></input>
-                <div class="logos">
-                  <div>
-                    <a href="" class="logoMinus">
-                    <i class="fa-solid fa-minus"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="" class="logoTrash">
-                    <i class="fa-solid fa-trash"></i>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li class="cntItem">
-                <div><input type="checkbox" /></div>
-                <input type="text" class="txt"></input>
-                <div class="logos">
-                  <div>
-                    <a href="" class="logoMinus">
-                    <i class="fa-solid fa-minus"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="" class="logoTrash">
-                    <i class="fa-solid fa-trash"></i>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li class="cntItem">
-                <div><input type="checkbox" /></div>
-                <input type="text" class="txt"></input>
+                <input id="txt" type="text" class="txt"></input>
                 <div class="logos">
                   <div>
                     <a href="" class="logoMinus">
@@ -233,5 +202,6 @@
         </section>
       </article>
     </section>
+    
   </body>
 </html>
