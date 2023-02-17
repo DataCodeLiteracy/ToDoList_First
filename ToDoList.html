@@ -58,26 +58,26 @@
         <section class="todo">
           <div class="container">
             <div class="title">To-Do</div>
-            <ul class="cntItems">
+            <ul class="cntItemsTodo">
               <li class="cntItem">
                 <div><input type="checkbox" /></div>
                 <input id="txt" type="text" class="txt"></input>
                 <div class="logos">
                   <div>
-                    <a href="" class="logoMinus">
+                    <button href="" class="logoMinus">
                     <i class="fa-solid fa-minus"></i>
-                    </a>
+                    </button>
                   </div>
                   <div>
-                    <a href="" class="logoTrash">
+                    <button href="" class="logoTrash">
                     <i class="fa-solid fa-trash"></i>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </li>
             </ul>
             <div class="addListBtn">
-              <button><i class="fa-solid fa-plus"></i></button>
+              <button class="plusBtnTodo"><i class="fa-solid fa-plus"></i></button>
               <span>Add List</span>
             </div>
           </div>
@@ -85,7 +85,7 @@
         <section class="inProgress">
           <div class="container">
             <div class="title">In-Progress</div>
-            <ul class="cntItems">
+            <ul class="cntItemsInpro">
               <li class="cntItem">
                 <div><input type="checkbox" /></div>
                 <input type="text" class="txt"></input>
@@ -102,41 +102,9 @@
                   </div>
                 </div>
               </li>
-              <li class="cntItem">
-                <div><input type="checkbox" /></div>
-                <input type="text" class="txt"></input>
-                <div class="logos">
-                  <div>
-                    <a href="" class="logoMinus">
-                    <i class="fa-solid fa-minus"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="" class="logoTrash">
-                    <i class="fa-solid fa-trash"></i>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li class="cntItem">
-                <div><input type="checkbox" /></div>
-                <input type="text" class="txt"></input>
-                <div class="logos">
-                  <div>
-                    <a href="" class="logoMinus">
-                    <i class="fa-solid fa-minus"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="" class="logoTrash">
-                    <i class="fa-solid fa-trash"></i>
-                    </a>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            </ul>       
             <div class="addListBtn">
-              <button><i class="fa-solid fa-plus"></i></button>
+              <button class="plusBtnInpro"><i class="fa-solid fa-plus"></i></button>
               <span>Add List</span>
             </div>
           </div>
@@ -144,39 +112,7 @@
         <section class="completed">
           <div class="container">
             <div class="title">Completed</div>
-            <ul class="cntItems">
-              <li class="cntItem">
-                <div><input type="checkbox" /></div>
-                <input type="text" class="txt"></input>
-                <div class="logos">
-                  <div>
-                    <a href="" class="logoMinus">
-                    <i class="fa-solid fa-minus"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="" class="logoTrash">
-                    <i class="fa-solid fa-trash"></i>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li class="cntItem">
-                <div><input type="checkbox" /></div>
-                <input type="text" class="txt"></input>
-                <div class="logos">
-                  <div>
-                    <a href="" class="logoMinus">
-                    <i class="fa-solid fa-minus"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="" class="logoTrash">
-                    <i class="fa-solid fa-trash"></i>
-                    </a>
-                  </div>
-                </div>
-              </li>
+            <ul class="cntItemsCompl">
               <li class="cntItem">
                 <div><input type="checkbox" /></div>
                 <input type="text" class="txt"></input>
@@ -195,13 +131,12 @@
               </li>
             </ul>
             <div class="addListBtn">
-              <button><i class="fa-solid fa-plus"></i></button>
+              <button class="plusBtnCompl"><i class="fa-solid fa-plus"></i></button>
               <span>Add List</span>
             </div>
           </div>
         </section>
       </article>
     </section>
-    
   </body>
 </html>
