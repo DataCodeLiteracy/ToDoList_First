@@ -85,3 +85,33 @@ function addList(ul) {
 }
 
 // ------------------------------------------------------------
+
+// Enter Contents to inputBox
+
+function createCntEnter() {
+  $cntItemsTodo.addEventListener("focusin", function (e) {
+    e.target.addEventListener("keydown", function (key) {
+      if (e.target.value == "") return;
+      else {
+        if (key.key == "Enter") {
+          if (
+            $cntItemsTodo.lastElementChild.getElementsByTagName("input")[1]
+              .value == ""
+          ) {
+            return;
+          } else {
+            e.target.innerHTML = e.target.value;
+            addList($cntItemsTodo);
+            $cntItemsTodo.lastElementChild
+              .getElementsByTagName("input")[1]
+              .focus();
+          }
+        }
+      }
+    });
+  });
+}
+
+createCntEnter();
+
+// ------------------------------------------------------------
