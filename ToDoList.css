@@ -1,3 +1,13 @@
+:root {
+  /* color */
+
+  /* font-size */
+  --font-micro: 5px;
+  --font-small: 10px;
+  --font-medium: 15px;
+  --font-large: 20px;
+}
+
 body {
   margin: 0 auto;
   font-family: "Source Sans Pro", sans-serif;
@@ -19,7 +29,7 @@ button {
 .logosAndSearch {
   display: flex;
   padding: 5px 20px;
-  font-size: 15px;
+  font-size: var(--font-medium);
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -48,14 +58,14 @@ button {
 
 .searchBar > a {
   color: black;
-  font-size: 12px;
+  font-size: calc(var(--font-medium) / 5 * 4);
   margin: 0 10px 0 5px;
 }
 
 .searchBar > .txt {
   display: inline-block;
   color: gray;
-  font-size: 10px;
+  font-size: var(--font-small);
   line-height: 20px;
 }
 
@@ -97,7 +107,7 @@ li {
 
 .navItem > span {
   margin-left: 10px;
-  font-size: 12px;
+  font-size: calc(var(--font-medium) / 5 * 4);
 }
 
 input[type="checkbox"] {
@@ -178,13 +188,13 @@ input[type="checkbox"]:checked {
 .logoMinus {
   color: black;
   height: 5px;
-  font-size: 5px;
+  font-size: var(--font-micro);
 }
 
 .logoTrash {
   margin-top: 5px;
   height: 5px;
-  font-size: 5px;
+  font-size: var(--font-micro);
   color: black;
 }
 
@@ -200,11 +210,11 @@ input[type="checkbox"]:checked {
 
 .addListBtn > a {
   color: black;
-  font-size: 15px;
+  font-size: var(--font-medium);
 }
 
 .addListBtn > span {
-  font-size: 15px;
+  font-size: var(--font-medium);
 }
 
 input[type="text"] {
