@@ -34,18 +34,6 @@ const $plusBtnInpro = document.querySelector(".plusBtnInpro");
 const $cntItemsCompl = document.querySelector(".cntItemsCompl");
 const $plusBtnCompl = document.querySelector(".plusBtnCompl");
 
-$plusBtnTodo.addEventListener("click", function () {
-  addList($cntItemsTodo);
-});
-
-$plusBtnInpro.addEventListener("click", function () {
-  addList($cntItemsInpro);
-});
-
-$plusBtnCompl.addEventListener("click", function () {
-  addList($cntItemsCompl);
-});
-
 function addList(ul) {
   // li 요소 생성
   const $li = document.createElement("li");
@@ -84,13 +72,26 @@ function addList(ul) {
   $button2.innerHTML = '<i class="fa-solid fa-trash"></i>';
 }
 
+$plusBtnTodo.addEventListener("click", function () {
+  addList($cntItemsTodo);
+});
+
+$plusBtnInpro.addEventListener("click", function () {
+  addList($cntItemsInpro);
+});
+
+$plusBtnCompl.addEventListener("click", function () {
+  addList($cntItemsCompl);
+});
+
 // ------------------------------------------------------------
 
 // Enter Contents to inputBox
 
-function createCntEnter() {
+function createCntEnterTodo() {
   $cntItemsTodo.addEventListener("focusin", function (e) {
-    e.target.addEventListener("keydown", function (key) {
+    e.target.addEventListener("keypress", function (key) {
+      key.stopPropagation();
       if (e.target.value == "") return;
       else {
         if (key.key == "Enter") {
@@ -112,6 +113,56 @@ function createCntEnter() {
   });
 }
 
-createCntEnter();
+function createCntEnterInpro() {
+  $cntItemsInpro.addEventListener("focusin", function (e) {
+    e.target.addEventListener("keypress", function (key) {
+      if (e.target.value == "") return;
+      else {
+        if (key.key == "Enter") {
+          if (
+            $cntItemsInpro.lastElementChild.getElementsByTagName("input")[1]
+              .value == ""
+          ) {
+            return;
+          } else {
+            e.target.innerHTML = e.target.value;
+            addList($cntItemsInpro);
+            $cntItemsInpro.lastElementChild
+              .getElementsByTagName("input")[1]
+              .focus();
+          }
+        }
+      }
+    });
+  });
+}
+
+function createCntEnterCompl() {
+  $cntItemsCompl.addEventListener("focusin", function (e) {
+    e.target.addEventListener("keypress", function (key) {
+      if (e.target.value == "") return;
+      else {
+        if (key.key == "Enter") {
+          if (
+            $cntItemsCompl.lastElementChild.getElementsByTagName("input")[1]
+              .value == ""
+          ) {
+            return;
+          } else {
+            e.target.innerHTML = e.target.value;
+            addList($cntItemsCompl);
+            $cntItemsCompl.lastElementChild
+              .getElementsByTagName("input")[1]
+              .focus();
+          }
+        }
+      }
+    });
+  });
+}
+
+createCntEnterTodo();
+createCntEnterInpro();
+createCntEnterCompl();
 
 // ------------------------------------------------------------
