@@ -269,3 +269,42 @@ function countCompl() {
 }
 
 // ------------------------------------------------------------
+
+// move Contents
+
+// To-Do -> In-Progress
+$cntItemsTodo.addEventListener("focusin", function (e) {
+  if (e.target.type === "checkbox") {
+    $cntItemsInpro.appendChild(e.target.parentElement.parentElement);
+  }
+});
+
+// In-Progress -> Completed
+
+$cntItemsInpro.addEventListener("focusin", function (e) {
+  if (e.target.type === "checkbox") {
+    $cntItemsCompl.appendChild(e.target.parentElement.parentElement);
+  }
+});
+
+// Completed -> In-Progress
+
+$cntItemsCompl.addEventListener("focusin", function (e) {
+  if (e.target.className === "logoMinus") {
+    $cntItemsInpro.appendChild(
+      e.target.parentElement.parentElement.parentElement
+    );
+  }
+});
+
+// In-Progress -> To-Do
+
+$cntItemsInpro.addEventListener("focusin", function (e) {
+  if (e.target.className === "logoMinus") {
+    $cntItemsTodo.appendChild(
+      e.target.parentElement.parentElement.parentElement
+    );
+  }
+});
+
+// ------------------------------------------------------------
