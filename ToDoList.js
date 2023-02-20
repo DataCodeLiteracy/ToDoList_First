@@ -166,3 +166,35 @@ createCntEnterInpro();
 createCntEnterCompl();
 
 // ------------------------------------------------------------
+
+// remove ContentsBox
+
+function removeContentsTodo() {
+  $cntItemsTodo.addEventListener("focusin", function (e) {
+    if (e.target.className == "logoTrash") {
+      e.target.parentElement.parentElement.parentElement.remove();
+    }
+  });
+}
+
+function removeContentsInpro() {
+  $cntItemsInpro.addEventListener("focusin", function (e) {
+    if (e.target.className == "logoTrash") {
+      e.target.parentElement.parentElement.parentElement.remove();
+    }
+  });
+}
+
+function removeContentsCompl() {
+  $cntItemsCompl.addEventListener("focusin", function (e) {
+    if (e.target.className == "logoTrash") {
+      e.target.parentElement.parentElement.parentElement.remove();
+    }
+  });
+}
+
+removeContentsTodo();
+removeContentsInpro();
+removeContentsCompl();
+
+// ------------------------------------------------------------
