@@ -1,3 +1,5 @@
+// global variable
+
 // navbar Sliding
 const $logoBars = document.querySelector(".logoBars");
 const $navbar = document.querySelector(".navbar");
@@ -106,6 +108,8 @@ function createCntEnterTodo() {
             $cntItemsTodo.lastElementChild
               .getElementsByTagName("input")[1]
               .focus();
+            countTodo();
+            countAll();
           }
         }
       }
@@ -130,6 +134,8 @@ function createCntEnterInpro() {
             $cntItemsInpro.lastElementChild
               .getElementsByTagName("input")[1]
               .focus();
+            countInpro();
+            countAll();
           }
         }
       }
@@ -154,6 +160,8 @@ function createCntEnterCompl() {
             $cntItemsCompl.lastElementChild
               .getElementsByTagName("input")[1]
               .focus();
+            countCompl();
+            countAll();
           }
         }
       }
@@ -173,6 +181,8 @@ function removeContentsTodo() {
   $cntItemsTodo.addEventListener("focusin", function (e) {
     if (e.target.className == "logoTrash") {
       e.target.parentElement.parentElement.parentElement.remove();
+      countTodo();
+      countAll();
     }
   });
 }
@@ -181,6 +191,8 @@ function removeContentsInpro() {
   $cntItemsInpro.addEventListener("focusin", function (e) {
     if (e.target.className == "logoTrash") {
       e.target.parentElement.parentElement.parentElement.remove();
+      countInpro();
+      countAll();
     }
   });
 }
@@ -189,6 +201,8 @@ function removeContentsCompl() {
   $cntItemsCompl.addEventListener("focusin", function (e) {
     if (e.target.className == "logoTrash") {
       e.target.parentElement.parentElement.parentElement.remove();
+      countCompl();
+      countAll();
     }
   });
 }
@@ -196,5 +210,62 @@ function removeContentsCompl() {
 removeContentsTodo();
 removeContentsInpro();
 removeContentsCompl();
+
+// ------------------------------------------------------------
+
+// contents Count
+
+$countListTodo = document.querySelector(".countListTodo");
+$countListInpro = document.querySelector(".countListInpro");
+$countListCompl = document.querySelector(".countListCompl");
+$countListAll = document.querySelector(".countListAll");
+
+function countAll() {
+  let countAll = 0;
+  countAll =
+    Number($countListTodo.innerHTML) +
+    Number($countListInpro.innerHTML) +
+    Number($countListCompl.innerHTML);
+  $countListAll.innerHTML = countAll;
+}
+
+function countTodo() {
+  $cntItemsTodoLi = $cntItemsTodo.getElementsByTagName("li");
+  let countTodo = 0;
+  for (const item of $cntItemsTodoLi) {
+    if (item.getElementsByTagName("input")[1].value == "") {
+      return;
+    } else {
+      countTodo++;
+      $countListTodo.innerHTML = countTodo;
+    }
+  }
+}
+
+function countInpro() {
+  $cntItemsInproLi = $cntItemsInpro.getElementsByTagName("li");
+  let countInpro = 0;
+  for (const item of $cntItemsInproLi) {
+    if (item.getElementsByTagName("input")[1].value == "") {
+      return;
+    } else {
+      countInpro++;
+      $countListInpro.innerHTML = countInpro;
+    }
+  }
+}
+
+function countCompl() {
+  $cntItemsComplLi = $cntItemsCompl.getElementsByTagName("li");
+  let countCompl = 0;
+  for (const item of $cntItemsComplLi) {
+    if (item.getElementsByTagName("input")[1].value == "") {
+      return;
+    } else {
+      countCompl++;
+      $countListCompl.innerHTML = countCompl;
+    }
+  }
+}
 
 // ------------------------------------------------------------
