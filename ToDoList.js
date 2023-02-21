@@ -1,9 +1,15 @@
 // global variable
+const $mainBody = document.querySelector(".mainBody");
+
+const $cntItemsTodo = document.querySelector(".cntItemsTodo");
+const $cntItemsInpro = document.querySelector(".cntItemsInpro");
+const $cntItemsCompl = document.querySelector(".cntItemsCompl");
+
+const $container = document.querySelector(".container");
 
 // navbar Sliding
 const $logoBars = document.querySelector(".logoBars");
 const $navbar = document.querySelector(".navbar");
-const $mainBody = document.querySelector(".mainBody");
 
 $logoBars.addEventListener("click", function () {
   $navbar.classList.toggle("active");
@@ -29,49 +35,72 @@ inputBox.addEventListener("blur", function () {
 
 // Add List Button
 
-const $cntItemsTodo = document.querySelector(".cntItemsTodo");
 const $plusBtnTodo = document.querySelector(".plusBtnTodo");
-const $cntItemsInpro = document.querySelector(".cntItemsInpro");
 const $plusBtnInpro = document.querySelector(".plusBtnInpro");
-const $cntItemsCompl = document.querySelector(".cntItemsCompl");
 const $plusBtnCompl = document.querySelector(".plusBtnCompl");
 
+// function addList(ul) {
+//   // li 요소 생성
+//   const $li = document.createElement("li");
+//   // ul태그에 li요소 자식으로 추가
+//   ul.appendChild($li);
+//   // li요소에 클래스 생성
+//   $li.classList.add("cntItem");
+//   // div 요소 생성
+//   const $div = document.createElement("div");
+//   // li요소에 div 요소 자식으로 추가
+//   $li.appendChild($div);
+//   // input 요소 생성
+//   const $input = document.createElement("input");
+//   // div 요소에 input 요소 자식으로 추가
+//   $div.appendChild($input);
+//   // input type checkbox로 변경
+//   $input.type = "checkbox";
+//   // li 요소에 input 요소 추가후 id 생성
+//   const $input2 = document.createElement("input");
+//   $li.appendChild($input2);
+//   $input2.id = "txt";
+//   const $div2 = document.createElement("div");
+//   $li.appendChild($div2);
+//   $div2.className = "logos";
+//   const $div3 = document.createElement("div");
+//   $div2.appendChild($div3);
+//   const $button = document.createElement("button");
+//   $div3.appendChild($button);
+//   $button.className = "logoMinus";
+//   $button.innerHTML = '<i class="fa-solid fa-minus"></i>';
+//   const $div4 = document.createElement("div");
+//   $div2.appendChild($div4);
+//   const $button2 = document.createElement("button");
+//   $div4.appendChild($button2);
+//   $button2.className = "logoTrash";
+//   $button2.innerHTML = '<i class="fa-solid fa-trash"></i>';
+// }
+
 function addList(ul) {
-  // li 요소 생성
   const $li = document.createElement("li");
-  // ul태그에 li요소 자식으로 추가
+  $li.className = "cntItem";
   ul.appendChild($li);
-  // li요소에 클래스 생성
-  $li.classList.add("cntItem");
-  // div 요소 생성
   const $div = document.createElement("div");
-  // li요소에 div 요소 자식으로 추가
   $li.appendChild($div);
-  // input 요소 생성
   const $input = document.createElement("input");
-  // div 요소에 input 요소 자식으로 추가
   $div.appendChild($input);
-  // input type checkbox로 변경
   $input.type = "checkbox";
-  // li 요소에 input 요소 추가후 id 생성
   const $input2 = document.createElement("input");
   $li.appendChild($input2);
   $input2.id = "txt";
-  const $div2 = document.createElement("div");
-  $li.appendChild($div2);
-  $div2.className = "logos";
-  const $div3 = document.createElement("div");
-  $div2.appendChild($div3);
-  const $button = document.createElement("button");
-  $div3.appendChild($button);
-  $button.className = "logoMinus";
-  $button.innerHTML = '<i class="fa-solid fa-minus"></i>';
-  const $div4 = document.createElement("div");
-  $div2.appendChild($div4);
-  const $button2 = document.createElement("button");
-  $div4.appendChild($button2);
-  $button2.className = "logoTrash";
-  $button2.innerHTML = '<i class="fa-solid fa-trash"></i>';
+  $li.innerHTML += `<div class="logos">
+                  <div>
+                    <button class="logoMinus">
+                    <i class="fa-solid fa-minus"></i>
+                    </button>
+                  </div>
+                  <div>
+                    <button class="logoTrash">
+                    <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </div>`;
 }
 
 $plusBtnTodo.addEventListener("click", function () {
@@ -90,6 +119,10 @@ $plusBtnCompl.addEventListener("click", function () {
 
 // Enter Contents to inputBox
 
+function nextFocus(ul) {
+  ul.lastElementChild.getElementsByTagName("input")[1].focus();
+}
+
 function createCntEnterTodo() {
   $cntItemsTodo.addEventListener("focusin", function (e) {
     e.target.addEventListener("keypress", function (key) {
@@ -105,9 +138,7 @@ function createCntEnterTodo() {
           } else {
             e.target.innerHTML = e.target.value;
             addList($cntItemsTodo);
-            $cntItemsTodo.lastElementChild
-              .getElementsByTagName("input")[1]
-              .focus();
+            nextFocus($cntItemsTodo);
             countTodo();
             countAll();
           }
@@ -131,9 +162,7 @@ function createCntEnterInpro() {
           } else {
             e.target.innerHTML = e.target.value;
             addList($cntItemsInpro);
-            $cntItemsInpro.lastElementChild
-              .getElementsByTagName("input")[1]
-              .focus();
+            nextFocus($cntItemsInpro);
             countInpro();
             countAll();
           }
@@ -157,9 +186,7 @@ function createCntEnterCompl() {
           } else {
             e.target.innerHTML = e.target.value;
             addList($cntItemsCompl);
-            $cntItemsCompl.lastElementChild
-              .getElementsByTagName("input")[1]
-              .focus();
+            nextFocus($cntItemsCompl);
             countCompl();
             countAll();
           }
@@ -210,6 +237,45 @@ function removeContentsCompl() {
 removeContentsTodo();
 removeContentsInpro();
 removeContentsCompl();
+
+// ------------------------------------------------------------
+
+// move Contents
+
+// To-Do -> In-Progress
+$cntItemsTodo.addEventListener("focusin", function (e) {
+  if (e.target.type === "checkbox") {
+    $cntItemsInpro.appendChild(e.target.parentElement.parentElement);
+  }
+});
+
+// In-Progress -> Completed
+
+$cntItemsInpro.addEventListener("focusin", function (e) {
+  if (e.target.type === "checkbox") {
+    $cntItemsCompl.appendChild(e.target.parentElement.parentElement);
+  }
+});
+
+// Completed -> In-Progress
+
+$cntItemsCompl.addEventListener("focusin", function (e) {
+  if (e.target.className === "logoMinus") {
+    $cntItemsInpro.appendChild(
+      e.target.parentElement.parentElement.parentElement
+    );
+  }
+});
+
+// In-Progress -> To-Do
+
+$cntItemsInpro.addEventListener("focusin", function (e) {
+  if (e.target.className === "logoMinus") {
+    $cntItemsTodo.appendChild(
+      e.target.parentElement.parentElement.parentElement
+    );
+  }
+});
 
 // ------------------------------------------------------------
 
@@ -267,44 +333,5 @@ function countCompl() {
     }
   }
 }
-
-// ------------------------------------------------------------
-
-// move Contents
-
-// To-Do -> In-Progress
-$cntItemsTodo.addEventListener("focusin", function (e) {
-  if (e.target.type === "checkbox") {
-    $cntItemsInpro.appendChild(e.target.parentElement.parentElement);
-  }
-});
-
-// In-Progress -> Completed
-
-$cntItemsInpro.addEventListener("focusin", function (e) {
-  if (e.target.type === "checkbox") {
-    $cntItemsCompl.appendChild(e.target.parentElement.parentElement);
-  }
-});
-
-// Completed -> In-Progress
-
-$cntItemsCompl.addEventListener("focusin", function (e) {
-  if (e.target.className === "logoMinus") {
-    $cntItemsInpro.appendChild(
-      e.target.parentElement.parentElement.parentElement
-    );
-  }
-});
-
-// In-Progress -> To-Do
-
-$cntItemsInpro.addEventListener("focusin", function (e) {
-  if (e.target.className === "logoMinus") {
-    $cntItemsTodo.appendChild(
-      e.target.parentElement.parentElement.parentElement
-    );
-  }
-});
 
 // ------------------------------------------------------------
