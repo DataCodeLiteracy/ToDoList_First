@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="ToDoList.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/b8ead2406e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="ToDoList.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="logosAndSearch">
+        <button class="logoBars"><i class="fa-solid fa-bars"></i></button>
+        <a href="" class="logoHome"><i class="fa-solid fa-house"></i></a>
+        <div class="searchBar">
+          <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+          <span class="txt">Search</span>
+        </div>
+      </div>
+    </header>
+    <section class="mainSec">
+      <nav class="navbar">
+        <ul class="navItems">
+          <li class="navItem">
+            <input type="checkbox" />
+            <span class="Itemtitle">ALL</span>
+            <span class="countListAll">0</span>
+          </li>
+          <li id="checkTodo" class="navItem">
+            <input type="checkbox" />
+            <span class="Itemtitle">To-Do</span>
+            <span class="countListTodo">0</span>
+          </li>
+          <li class="navItem">
+            <input type="checkbox" />
+            <span class="Itemtitle">In-Progress</span>
+            <span class="countListInpro">0</span>
+          </li>
+          <li class="navItem">
+            <input type="checkbox" />
+            <span class="Itemtitle">Completed</span>
+            <span class="countListCompl">0</span>
+          </li>
+        </ul>
+      </nav>
+      <article class="mainBody">
+        <section class="todo">
+          <div class="container">
+            <div class="title">To-Do</div>
+            <ul class="cntItemsTodo">
+              <li class="cntItem">
+                <div><input  type="checkbox" /></div>
+                <input id="txt" type="text"></input>
+                <div class="logos">
+                  <div>
+                    <button class="logoMinus">
+                    <i class="fa-solid fa-minus"></i>
+                    </button>
+                  </div>
+                  <div>
+                    <button class="logoTrash">
+                    <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="addListBtn">
+              <button class="plusBtnTodo"><i class="fa-solid fa-plus"></i></button>
+              <span>Add List</span>
+            </div>
+          </div>
+        </section>
+        <section class="inProgress">
+          <div class="container">
+            <div class="title">In-Progress</div>
+            <ul class="cntItemsInpro">
+              <li class="cntItem">
+                <div><input type="checkbox" /></div>
+                <input type="text" id="txt"></input>
+                <div class="logos">
+                  <div>
+                    <button class="logoMinus">
+                    <i class="fa-solid fa-minus"></i>
+                    </button>
+                  </div>
+                  <div>
+                    <button class="logoTrash">
+                    <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>       
+            <div class="addListBtn">
+              <button class="plusBtnInpro"><i class="fa-solid fa-plus"></i></button>
+              <span>Add List</span>
+            </div>
+          </div>
+        </section>
+        <section class="completed">
+          <div class="container">
+            <div class="title">Completed</div>
+            <ul class="cntItemsCompl">
+              <li class="cntItem">
+                <div><input type="checkbox" /></div>
+                <input type="text" class="txt"></input>
+                <div class="logos">
+                  <div>
+                    <button class="logoMinus">
+                    <i class="fa-solid fa-minus"></i>
+                    </button>
+                  </div>
+                  <div>
+                    <button class="logoTrash">
+                    <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="addListBtn">
+              <button class="plusBtnCompl"><i class="fa-solid fa-plus"></i></button>
+              <span>Add List</span>
+            </div>
+          </div>
+        </section>
+      </article>
+    </section>
+  </body>
+</html>
